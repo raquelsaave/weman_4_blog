@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> WeManConnect Blog </title>
+    <base href="/">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css\index.css">
+    <script type="text/javascript" src="js\index.js"></script>
+    
+</head>
+
+<body onload="leerPublicaciones()">
+    <!--Encabezado del Blog-->
+    <!-- Tiene una imagen de logo, el titulo y 2 iconos de navegacion -->
+
+    <!-- N A V E G A C I O N -->
+    <nav>
+        <img src="img\logo.jpg" alt="Logo de WeMan Connect">
+        <h1> WeMan Connect </h1>
+        <div class="icons">
+            <!--Div con imagenes de icons importadas-->
+            <a href="#popup2" class="popup-link"><button src=""> <i class="fas fa-share-alt-square"></i></button></a>
+            <a href="#popup1" class="popup-link"><button id="profile" src=""> <i class="far fa-user"></i></button></a>
+        </div>
+    </nav>
+    <!-- Termina N A V E G A C I O N-->
+
+    <!-- Inician  P O S T S -->
+    <!-- Continua con seccion de todos los posts, necesitamos contenedor de todas las publicaciones -->
+    <!--Con esta seccion de div, mandamos a llamar por ID la funcion de javascript-->
+    <!--<div id="posts"> </div> -->
+    <div id="all"> 
+        
+    </div>
+    <!--Aqui se corre la función para dibujar los posts-->
+    
+    <!--Termina el dibujado de post-->
+    <!-- Terminan P O S T S -->
+
+    <!-- Inician pantallas   P O P   U P-->
+    <!-- Ventana de Login -->
+    <div class="modal-wrapper" id="popup1">
+        <div class="popup-contenedor">
+            <form>
+                <div id="e-mail">
+                    <h2>Correo electrónico</h2>
+                    <input type="text" name="correo" value="" placeholder="Lorem Ipsum">
+                </div>
+                <div id="psw">
+                    <h2>Contraseña</h2>
+                    <input type="text" name="contraseña" value="" placeholder="Lorem Ipsum">
+                </div> <br><br>
+                <div id="log-buttons">
+                    <!--Botón de envio del formulario-->
+                    <input type="submit" value="Olvide mi contraseña">
+                    <input type="submit" value="Entrar"> <br> <br>
+                </div>
+            </form>
+            <a class="popup-cerrar" href="#">X</a>
+        </div>
+    </div>
+
+    <!-- Ventana de Nuevo Post -->
+    <div class="modal-wrapper" id="popup2">
+        <div class="popup-contenedor">
+            <form>
+                <h2>Publicar nueva entrada</h2>
+                <div class="form">
+                <div id="entry">
+                    <input type="text" name="titulo" value="" placeholder="Titulo de la entrada">
+                    <br>
+                    <textarea placeholder="Contenido" rows="10" cols="60"></textarea>
+                </div>
+                <div id="new-post-buttons">
+                    <!--Botón de envio del formulario-->
+                    <input type="submit" value="Publicar"> <br><br>
+                    <div class="upload-btn-wrapper">
+                            <button class="btn"><i class="fas fa-camera-retro"></i><br>Upload Image</button>
+                            <input type="file" name="myfile" /> 
+                          </div>
+                    
+                </div>
+            </div>
+            </form>
+            <a class="popup-cerrar" href="#">X</a>
+        </div>
+
+    </div>
+    <!-- Terminan pantallas   P O P   U P-->
+
+</body>
+
+</html>
