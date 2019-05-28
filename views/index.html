@@ -23,11 +23,13 @@
         <h1> WeMan Connect </h1>
         <div class="icons">
             <!--Div con imagenes de icons importadas-->
-            <a href="#popup2" class="popup-link"><button src=""> <i class="fas fa-share-alt-square"></i></button></a>
+            <a href="#popup2" onclick="login('param1', 'param2')" class="popup-link"><button src=""> <i class="fas fa-share-alt-square"></i></button></a>
             <a href="#popup1" class="popup-link"><button id="profile" src=""> <i class="far fa-user"></i></button></a>
         </div>
     </nav>
     <!-- Termina N A V E G A C I O N-->
+
+    
 
     <!-- Inician  P O S T S -->
     <!-- Continua con seccion de todos los posts, necesitamos contenedor de todas las publicaciones -->
@@ -43,7 +45,8 @@
 
     <!-- Inician pantallas   P O P   U P-->
     <!-- Ventana de Login -->
-    <div class="modal-wrapper" id="popup1">
+
+    <!--<div class="modal-wrapper" id="popup1">
         <div class="popup-contenedor">
             <form>
                 <div id="e-mail">
@@ -55,17 +58,18 @@
                     <input type="text" name="contraseña" value="" placeholder="Lorem Ipsum">
                 </div> <br><br>
                 <div id="log-buttons">
+                    -->
                     <!--Botón de envio del formulario-->
-                    <input type="submit" value="Olvide mi contraseña">
+                <!--    <input type="submit" value="Olvide mi contraseña">
                     <input type="submit" value="Entrar"> <br> <br>
                 </div>
             </form>
             <a class="popup-cerrar" href="#">X</a>
         </div>
     </div>
-
+-->
     <!-- Ventana de Nuevo Post -->
-    <div class="modal-wrapper" id="popup2">
+    <!--  <div class="modal-wrapper" id="popup2">
         <div class="popup-contenedor">
             <form>
                 <h2>Publicar nueva entrada</h2>
@@ -76,8 +80,9 @@
                     <textarea placeholder="Contenido" rows="10" cols="60"></textarea>
                 </div>
                 <div id="new-post-buttons">
+                -->
                     <!--Botón de envio del formulario-->
-                    <input type="submit" value="Publicar"> <br><br>
+              <!--       <input type="submit" value="Publicar"> <br><br>
                     <div class="upload-btn-wrapper">
                             <button class="btn"><i class="fas fa-camera-retro"></i><br>Upload Image</button>
                             <input type="file" name="myfile" /> 
@@ -89,8 +94,58 @@
             <a class="popup-cerrar" href="#">X</a>
         </div>
 
-    </div>
+    </div>  -->
     <!-- Terminan pantallas   P O P   U P-->
+
+    <div class="modal-wrapper" id="popup1">
+        <div class="popup-contenedor1">
+            <form id="frmLogin" method="post" action="./login">
+                <div id="e-mail">
+                    <h2>Correo electrónico</h2>
+                    <input type="text" name="usr" value="" placeholder="Nombre del usuario" />
+                </div>
+                <div id="psw">
+                    <h2>Contraseña</h2>
+                    <input type="password" name="pwd" value="" placeholder="Contraseña">
+                </div> <br><br>
+                <div id="log-buttons">
+                    <!--Botón de envio del formulario-->
+                    <input type="submit" value="Olvide mi contraseña">
+                    <input type="submit" name="hazmagia" value="Entrar"> <br> <br>
+                </div>
+            </form>
+            <a class="popup-cerrar" href="#">X</a>
+        </div>
+    </div>
+
+    <!-- Ventana de Nuevo Post -->
+    <div class="modal-wrapper" id="popup2">
+        <div class="popup-contenedor2">
+            <form id="frmPublica" method="post" action="./publica">
+                <input type="hidden" name="idusr" value = "1" />
+                <h2>Publicar nueva entrada</h2>
+                <div class="form">
+                <div id="entry">
+                    <input type="text" name="titulo" value="" placeholder="Titulo de la entrada">
+                    <br>
+                    <textarea name="texto" placeholder="Contenido" rows="10" cols="60"></textarea>
+                </div>
+                <div id="new-post-buttons">
+                    <!--Botón de envio del formulario-->
+                    <input type="submit" name="hazmagia" value="Publicar!"> <br><br>
+                    <div class="upload-btn-wrapper">
+                            <button class="btn"><i class="fas fa-camera-retro"></i><br>Upload Image</button>
+                            <input type="file" name="imagen" /> 
+                    </div>
+                    
+                </div>
+            </div>
+            </form>
+            <a class="popup-cerrar" href="#">X</a>
+        </div>
+
+    </div>
+
 
 </body>
 

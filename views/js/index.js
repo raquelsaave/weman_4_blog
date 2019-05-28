@@ -1,5 +1,5 @@
 
-function dibuja() {
+/*function dibuja() {
     let post = document.getElementById('posts');
     for (let i = 0; i < 5; i++) {
         let nvoPost = ' <div id="posts-container"> <div class="content-container"> <h3 id="title">Entrada de Noticias ' + i + '</h3> <p id="date">## ## 31/20/2010 ' + i + '</p> <p id="post"> ' + i + ' "LLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p> <p id="author">Autor del Post ' + i + ' </p> </div> <div class="image-container">  <img id="img" src=""> </div></div>';
@@ -23,7 +23,7 @@ function dibuja() {
         <div class="image-container">
             <img id="img" src="img/Domkyrkan0737.jpg" alt="Prueba">
         </div>
-    </div> */}
+    </div> */
 
 /** Este archivo se usará para poner funciones de ejemplo para llamadas asíncronas
 * Aunque no vienen pensadas en ejercicio original, es bueno pensarlas de una vez.
@@ -39,8 +39,12 @@ function peticionAsync(tipo, url, parametros) {
                 if(resp.error == "0"){
                     if(url === '/comentarios'){
                         dibujaPublicaciones(resp.registros)
+                    }/*else if( url === '/login'){
+                        alert("Bienvenido" +  resp.nombre);
                     }
-                }
+                }else if( resp.error == "1") {
+                    alert('Error de credenciales');
+                */}
             } else if (ajax.status == 404) {
                 //No encontró el servicio o API
             } else {
@@ -64,6 +68,20 @@ function leerPublicaciones() {
     peticionAsync('GET', '/comentarios', '');
 }
 
+function leerLogin(){
+    var formLog=document.getElementById('frmLogin');
+    if(formLog.usr.value == '' || formLog.pwd.value == ''){
+        alert('Espacios vacios!')
+    }else{
+        if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(formLog.usr.value) && /^(?=.*[\d])(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*])[\w!@#$%^&*]{8,}$/.test(formLog.pwd.value)){
+        peticionAsync('POST','/login', 'usr=' + formLog.usr.value + '&pwd=' + formLog.pwd.value);
+        alert('Hola! Usuario y contraseña valida')
+        }else{
+            alert('Usuario y contraseña invalida')
+        }
+    }
+    
+}
 
 
 function dibujaPublicaciones(publis) {
@@ -84,4 +102,5 @@ function dibujaPublicaciones(publis) {
     }
 
 }
+
 

@@ -38,6 +38,7 @@ router.post('/login', (pet, resp) => {
 	//Vamos a hacer la petición de entrada aquí...
 	console.log("Petición de acceso para usuarios");
 	let res = seg.valida(pet.body.usr, pet.body.pwd, resp);
+	
 });
 
 /** Ruta: /publica
